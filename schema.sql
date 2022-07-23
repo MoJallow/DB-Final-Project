@@ -1,0 +1,3 @@
+CREATE TABLE books(book_id INTEGER, title TEXT , genre TEXT, ISBN TEXT, year_of_publication INTEGER, PRIMARY KEY(book_id));
+CREATE TABLE mid_table(mid_id INTEGER, inter_id INTEGER , PRIMARY KEY(mid_id), FOREIGN KEY(inter_id) REFERENCES books(book_id));
+CREATE TABLE author_table(author_id INTEGER , name TEXT , gender TEXT, nationality TEXT, telephone INTEGER, PRIMARY KEY(author_id) , FOREIGN KEY(author_id) REFERENCES mid_table(mid_id));
