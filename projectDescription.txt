@@ -1,0 +1,26 @@
+
+This is a database project on books and whom they are authored by. Therefore,there are two entities in this project namely: Book and Author entities.
+
+I. The Book Entity: the book entity has the following attributes:
+-title
+-genre
+-author's name
+-ISBN
+book_id is the primary Key of books.
+
+II. The Author entity has the following attributes:
+-gender
+-nationality
+-telephone number
+-author_id which is the primary key in the author_table but a foreign key in the mid_table.
+
+
+III. A table joins books to the and this table is herein referred to as the mid_table. The mid_table has the following id's:
+the mid_id which is serving as the primary key in the table.
+the inter_id is the foreign key and it references books.
+
+The languages used in the automation of this project are:
+-Python
+-sqlite3
+The queries are performed using the sqlite3.
+

@@ -1,0 +1,20 @@
+1.#This query returns the total number of books
+SELECT COUNT(ISBN) FROM books;
+
+2.#Returns the title of the book written by Soli woyenga
+SELECT title FROM author_table
+JOIN mid_table ON mid_table.mid_id = author_table.author_id
+JOIN books ON books.book_id = mid_table.mid_id
+WHERE author_table.name LIKE "%Soli%";
+
+3.#Returns the genre of the book written by Tommy Hays
+SELECT genre FROM author_table 
+JOIN mid_table ON mid_table.mid_id = author_table.author_id
+JOIN books ON books.book_id = mid_table.mid_id
+WHERE author_table.name LIKE "%Tommy%";
+
+4.#Returns books written by American authors
+SELECT title FROM books WHERE book_id IN(SELECT mid_id FROM mid_table WHERE mid_id IN(SELECT author_id FROM author_table WHERE nationality LIKE "%America%"));
+
+5.#Returns the year of publication of the book written by Troy Denning
+SELECT year_of_publication FROM books WHERE book_id IN(SELECT mid_id FROM mid_table WHERE mid_id IN(SELECT author_id FROM author_table WHERE name LIKE "%Troy%"));
